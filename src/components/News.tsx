@@ -4,7 +4,17 @@ import Spinner from "./Spinner";
 import PropTypes from "prop-types";
 import InfiniteScroll from "react-infinite-scroll-component";
 
-const News = (props) => {
+type NewsProps = {
+  category: string;
+  country: string;
+  title?: string;
+  key: string;
+  apiKey: string | undefined;
+  pageSize: number | null | undefined;
+  setProgress: React.Dispatch<React.SetStateAction<number>>;
+};
+
+const News = (props: NewsProps) => {
   const [articles, setArticles] = useState([]);
   const [loading, setLoading] = useState(true);
   const [page, setPage] = useState(1);
@@ -61,7 +71,7 @@ const News = (props) => {
       >
         <div className="container">
           <div className="row">
-            {articles.map((element) => {
+            {articles.map((element: any) => {
               return (
                 <div className="col-md-4" key={element.url}>
                   <NewsItem
@@ -78,7 +88,7 @@ const News = (props) => {
                     author={element.author ? element.author : "Unknown"}
                     date={
                       element.publishedAt
-                        ? new Date(element.publishedAt).toGMTString()
+                        ? new Date(element.publishedAt).toUTCString()
                         : "Undefined"
                     }
                     source={element.source.name}

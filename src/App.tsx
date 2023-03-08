@@ -4,9 +4,12 @@ import Navbar from "./components/Navbar";
 import News from "./components/News";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import LoadingBar from "react-top-loading-bar";
+
+
 const App = () => {
   const pageSize = 6;
-  const apiKey = process.env.REACT_APP_NEWS_API;
+  // const apiKey = process.env.REACT_APP_NEWSAPI;
+  const apiKey = "30d5c205ca6f484c96954e35732aedf0";
   const [progress, setProgress] = useState(0);
 
   return (
