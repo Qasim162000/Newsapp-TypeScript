@@ -1,7 +1,6 @@
 {
   "name": "newapp",
   "version": "0.1.0",
-  "homepage": "https://Qasim162000.github.io/Newsapp-TypeScript",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.4",
